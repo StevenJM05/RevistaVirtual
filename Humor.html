@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Chistes</title>
+    <style>
+        {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0px;
+        font-family: "segoe ui";
+      }
+
+      .nav {
+        height: 50px;
+        width: 100%;
+        background-color: #000000;
+        position: relative;
+      }
+
+      .nav > .nav-header {
+        display: inline;
+      }
+
+      .nav > .nav-header > .nav-title {
+        display: inline-block;
+        font-size: 22px;
+        color: #fff;
+        padding: 10px 10px 10px 10px;
+      }
+
+      .nav > .nav-btn {
+        display: none;
+      }
+
+      .nav > .nav-links {
+        display: inline;
+        float: right;
+        font-size: 18px;
+      }
+
+      .nav > .nav-links > a {
+        display: inline-block;
+        padding: 13px 10px 13px 10px;
+        text-decoration: none;
+        color: #efefef;
+      }
+
+      .nav > .nav-links > a:hover {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+
+      .nav > #nav-check {
+        display: none;
+      }
+
+      @media (max-width: 600px) {
+        .nav > .nav-btn {
+          display: inline-block;
+          position: absolute;
+          right: 0px;
+          top: 0px;
+        }
+        .nav > .nav-btn > label {
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          padding: 13px;
+        }
+        .nav > .nav-btn > label:hover,
+        .nav #nav-check:checked ~ .nav-btn > label {
+          background-color: rgba(0, 0, 0, 0.3);
+        }
+        .nav > .nav-btn > label > span {
+          display: block;
+          width: 25px;
+          height: 10px;
+          border-top: 2px solid #eee;
+        }
+        .nav > .nav-links {
+          position: absolute;
+          display: block;
+          width: 100%;
+          background-color: #333;
+          height: 0px;
+          transition: all 0.3s ease-in;
+          overflow-y: hidden;
+          top: 50px;
+          left: 0px;
+        }
+        .nav > .nav-links > a {
+          display: block;
+          width: 100%;
+        }
+        .nav > #nav-check:not(:checked) ~ .nav-links {
+          height: 0px;
+        }
+        .nav > #nav-check:checked ~ .nav-links {
+          height: calc(100vh - 50px);
+          overflow-y: auto;
+        }
+      }
+       
+        .joke {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .joke h2 {
+            margin-top: 0;
+        }
+        .joke p {
+            color: #666;
+        }
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+      body {
+        line-height: 1.5;
+        font-family: "Poppins", sans-serif;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        max-width: 1170px;
+        margin: auto;
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      ul {
+        list-style: none;
+      }
+      .footer {
+        background-color: #24262b;
+        padding: 70px 0;
+      }
+      .footer-col {
+        width: 25%;
+        padding: 0 15px;
+      }
+      .footer-col h4 {
+        font-size: 18px;
+        color: #ffffff;
+        text-transform: capitalize;
+        margin-bottom: 35px;
+        font-weight: 500;
+        position: relative;
+      }
+      .footer-col h4::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        background-color: #e91e63;
+        height: 2px;
+        box-sizing: border-box;
+        width: 50px;
+      }
+      .footer-col ul li:not(:last-child) {
+        margin-bottom: 10px;
+      }
+      .footer-col ul li a {
+        font-size: 16px;
+        text-transform: capitalize;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 300;
+        color: #bbbbbb;
+        display: block;
+        transition: all 0.3s ease;
+      }
+      .footer-col ul li a:hover {
+        color: #ffffff;
+        padding-left: 8px;
+      }
+      .footer-col .social-links a {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        background-color: rgba(255, 255, 255, 0.2);
+        margin: 0 10px 10px 0;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        color: #ffffff;
+        transition: all 0.5s ease;
+      }
+      .footer-col .social-links a:hover {
+        color: #24262b;
+        background-color: #ffffff;
+      }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav">
+            <input type="checkbox" id="nav-check" />
+            <div class="nav-header"></div>
+            <div class="nav-btn">
+              <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+              </label>
+            </div>
+    
+            <div class="nav-links">
+              <a href="index.html">Inicio</a>
+              <a href="eventos.html">Eventos</a>
+              <a href="noticias.html">Noticias</a>
+            </div>
+          </div>
+        <h1>¡Ríete con los Mejores Chistes!</h1>
+    </header>
+
+
+    <div class="joke" id="extra-short-jokes">
+        <h2>Chistes Cortos Adicionales</h2>
+        <p>— ¿Cómo se despiden los químicos? <br>— Ácido un placer.</p>
+        <p>— ¿Qué le dice un jardinero a otro? <br>— ¡Disfrutemos mientras podamos!</p>
+        <p>— ¿Qué hace una abeja en el gimnasio? <br>— ¡Zum-ba!</p>
+    </div>
+    
+    <div class="joke" id="extra-long-jokes">
+        <h2>Chistes Largos Adicionales</h2>
+        <p>
+            Un hombre entra a una tienda y le pregunta al vendedor: "¿Tienen aspiradoras?".<br>
+            El vendedor responde: "Sí, pero no se pueden aspirar solas".<br>
+            El hombre contesta: "¡Entonces, lo que necesito es una aspiradora que aspire por sí sola!"
+        </p>
+        <p>
+            Un señor está en la consulta del médico y le dice: "Doctor, creo que tengo memoria de pez".<br>
+            El médico le pregunta: "¿Desde cuándo tiene ese problema?".<br>
+            Y el señor responde: "¿Qué problema?".
+        </p>
+    </div>
+    
+    <div class="joke" id="extra-knock-knock">
+        <h2>Toc Toc Adicionales</h2>
+        <p>
+            Toc Toc.<br>
+            ¿Quién es?<br>
+            Doris.<br>
+            ¿Doris quién?<br>
+            ¡Doris abierta, soy yo!
+        </p>
+        <p>
+            Toc Toc.<br>
+            ¿Quién es?<br>
+            Ya.<br>
+            ¿Ya quién?<br>
+            ¡Ya no puedo más con estos chistes!
+        </p>
+    </div>
+    
+    <div class="joke" id="extra-random-jokes">
+        <h2>Chistes Random Adicionales</h2>
+        <p>— ¿Qué hace un pez en una biblioteca? <br>— Nada.</p>
+        <p>— ¿Cómo se llama el campeón de buceo japonés? <br>— Tokofondo.</p>
+        <p>— ¿Qué le dice un semáforo a otro? <br>— No me mires, ¡me estoy cambiando!</p>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li>
+                            <a href="#">about us</a>
+                        </li>
+                        <li>
+                            <a href="#">our services</a>
+                        </li>
+                        <li>
+                            <a href="#">privacy policy</a>
+                        </li>
+                        <li>
+                            <a href="#">affiliate program</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li>
+                            <a href="#">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#">shipping</a>
+                        </li>
+                        <li>
+                            <a href="#">returns</a>
+                        </li>
+                        <li>
+                            <a href="#">order status</a>
+                        </li>
+                        <li>
+                            <a href="#">payment options</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li>
+                            <a href="#">watch</a>
+                        </li>
+                        <li>
+                            <a href="#">bag</a>
+                        </li>
+                        <li>
+                            <a href="#">shoes</a>
+                        </li>
+                        <li>
+                            <a href="#">dress</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
